@@ -3,12 +3,8 @@ import React, { useEffect, useState } from "react";
 function Dashboard(){
     const [records, setRecords] = useState([]);
 
-    useEffect(() => {
-        const apiUrl = window.location.origin.includes('localhost') 
-        ? 'http://localhost:5000/get_records' 
-        : `${window.location.origin}/get_records`;
-        
-        fetch(apiUrl)
+    useEffect(() => {        
+        fetch("https://hidden-dawn-95959-cd7b690d3c29.herokuapp.com/get_records")
             .then((response) => response.json())
             .then((data) => {
                 setRecords(data); // Store the fetched records in state

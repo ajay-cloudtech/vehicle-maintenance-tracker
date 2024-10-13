@@ -12,10 +12,7 @@ function VehicleMaintenanceLog({ onSubmissionSuccess }){
 
     const handleSubmit = function(event){
         event.preventDefault();
-        const apiUrl = window.location.origin.includes('localhost')
-        ? 'http://localhost:5000/add_record'
-        : `${window.location.origin}/add_record`;
-        fetch(apiUrl, {
+        fetch("https://hidden-dawn-95959-cd7b690d3c29.herokuapp.com/add_record", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(formData),
