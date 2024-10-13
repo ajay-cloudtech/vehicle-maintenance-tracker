@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__, static_folder="frontend/build", static_url_path='')
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.config["MONGO_URI"] = "mongodb+srv://apanwar:Qwerty123@vmt-db-cluster.gnvxm.mongodb.net/vmt_db?retryWrites=true&w=majority&appName=vmt-db-cluster"
 mongo = PyMongo(app)

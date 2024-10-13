@@ -12,7 +12,10 @@ function VehicleMaintenanceLog({ onSubmissionSuccess }){
 
     const handleSubmit = function(event){
         event.preventDefault();
-        fetch("http://localhost:5000/add_record", {
+        const apiUrl = window.location.origin.includes('localhost')
+        ? 'http://localhost:5000/add_record'
+        : `${window.location.origin}/add_record`;
+        fetch(apiUrl, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(formData),

@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 function Dashboard(){
     const [records, setRecords] = useState([]);
 
-    // Fetch records when the component is mounted
     useEffect(() => {
-        fetch("http://localhost:5000/get_records")
+        const apiUrl = window.location.origin.includes('localhost') 
+        ? 'http://localhost:5000/get_records' 
+        : `${window.location.origin}/get_records`;
+        
+        fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
                 setRecords(data); // Store the fetched records in state
