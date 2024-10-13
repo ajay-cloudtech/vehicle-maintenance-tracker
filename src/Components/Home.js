@@ -4,7 +4,7 @@ function Dashboard(){
     const [records, setRecords] = useState([]);
 
     useEffect(() => {        
-        fetch("https://hidden-dawn-95959-cd7b690d3c29.herokuapp.com/get_records")
+        fetch("https://vehicle-maintenance-tracker-2d5f373a4199.herokuapp.com/get_records")
             .then((response) => response.json())
             .then((data) => {
                 setRecords(data); // Store the fetched records in state

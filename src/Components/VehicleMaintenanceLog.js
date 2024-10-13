@@ -12,7 +12,7 @@ function VehicleMaintenanceLog({ onSubmissionSuccess }){
 
     const handleSubmit = function(event){
         event.preventDefault();
-        fetch("https://hidden-dawn-95959-cd7b690d3c29.herokuapp.com/add_record", {
+        fetch("https://vehicle-maintenance-tracker-2d5f373a4199.herokuapp.com/add_record", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(formData),
