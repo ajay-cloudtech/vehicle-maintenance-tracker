@@ -1,0 +1,1 @@
+web: gunicorn vmt-backend.app:app
