@@ -1,21 +1,23 @@
 import React, {useState} from "react";
 import NavBar from "./Components/NavBar";
-import onAddRecordClick from "./Components/AddRecordClick";
 import VehicleMaintenanceLog from "./Components/VehicleMaintenanceLog";
 import './App.css';
+import Dashboard from "./Components/Home";
 
 function App(){
-  const [showForm, setShowForm] = useState(false);
+  const [currentView, setCurrentView] = useState('dashboard');
 
-  function handleAddRecordClick(event) {
-    onAddRecordClick(event, showForm, setShowForm); 
+  function handleNavigation(event) {
+    setCurrentView(event);
   }
 
   return(
     <div>
-      <NavBar onAddRecordClick={handleAddRecordClick}/>
-      {showForm && <VehicleMaintenanceLog />}
-
+        <NavBar onNavigation={handleNavigation}/>
+        {currentView === 'dashboard' && <Dashboard />}
+        {currentView === 'form' && (
+          <VehicleMaintenanceLog onSubmissionSuccess={() => setCurrentView('dashboard')} />
+        )}
     </div>
   );
 }
