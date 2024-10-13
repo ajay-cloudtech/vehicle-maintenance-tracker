@@ -1,38 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navBar{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#navList{
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#maintenanceForm{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 40%;
+  margin-left: 30%;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  padding: 10px 10px;
+
+}
+#vehicleMaintenanceDiv{
+  border: 1px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+input, select {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#maintenanceButton{
+  margin-left: 40%;
+  width: 20%;
+  height: 30px;
+  font-weight: bold;
+}
+
+#maintenanceHeading{
+  margin-left: 40%;
+}
+
+#navListDiv{
+  margin-left: 12%;
+
 }
